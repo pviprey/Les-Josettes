@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded",function(e) {
             zoom: 16 
         });
 
-        L.marker([latitude, longitude]).addTo(mymap).bindPopup("<b>32 Rue Megevand, 25000 Besançon</b><br/>Les josettes");
+        L.marker([latitude, longitude]).addTo(mymap).bindPopup("Nos locaux pour les dons et distributions");
 
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
             attribution: '© OpenStreetMap contributors',
-            maxZoom: 19
+            maxZoom: 18
         }).addTo(mymap);
     }
 
