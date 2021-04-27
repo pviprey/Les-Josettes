@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
             zoom: 16 
         });
 
-        L.marker([latitude, longitude]).addTo(mymap).bindPopup("Nos locaux pour les dons et distributions");
+        L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLSH<br>32 Rue Megevand, 25000 Besançon");
 
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
             attribution: '© OpenStreetMap contributors',

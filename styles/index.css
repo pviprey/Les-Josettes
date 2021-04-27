@@ -126,14 +126,14 @@ h1 .surligne:hover{
 .alligne{
     display: flex;
     flex-wrap: wrap;
-    align-items: inherit;
-    width: 100%;
+    align-items: center;
+    width: auto;
 }
 
 #map{
     position: relative;
     z-index: 0;
-    width: 50vw;
+    width: 100%;
     height: 80vh;
 }
 
