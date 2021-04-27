@@ -30,10 +30,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body{
     z-index: 0;
-    font-size: 16px;
     background-color: rgb(47, 47, 47);
-	line-height: 1.6;
-    font-family: 'Orelega One', cursive, Verdana, Geneva, sans-serif;
+	line-height: 1.4;
+    font-family: 'Orelega One', cursive;
     color: white;
 }
 ol, ul{
@@ -54,7 +53,29 @@ table {
 /*
 The following part has been added by myself 
 */
+
+p{
+    font-size: 1.5em;
+    font-weight: normal;
+}
+p:first-child{
+    margin-bottom: 1.2em;
+}
+p+p{
+    margin-bottom: 1.2em;
+}
+
+.onglet{
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
 header{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;    
     z-index: 1;
     height: 4em;
     width: 100%;
@@ -63,7 +84,6 @@ header{
     flex-wrap: wrap;
     align-items: inherit;
     justify-content: center;
-    position: relative;
 }
 
 header div{
@@ -76,7 +96,6 @@ header div{
 header div:first-child{
     border-left: 2px solid black;
 }
-
 header div:hover{
     transition: font-size 0.2s ease-in-out;
     font-size: 2.9em;
@@ -104,16 +123,34 @@ h1 .surligne:hover{
     background-position: 0 88%;
 }
 
-p{
-    margin: 1.2em 5em;
-    font-size: 1.5em;
+.alligne{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: inherit;
+    width: 100%;
 }
 
-#map {
-    width: 100vw;
-    height: 100vh;
-    position: absolute; 
-    top: 0;
-    left: 0;
+#map{
+    position: relative;
     z-index: 0;
+    width: 50vw;
+    height: 80vh;
+}
+
+#adresse p{
+    margin-bottom: 0;
+    margin-left: 1em;
+}
+
+#mailbox:hover{
+    cursor: pointer;
+}
+
+#mailbox p{
+    visibility: hidden;
+    text-align: center;
+    font-size: 0.85rem;
+}
+#mailbox:hover p{
+    visibility: visible;
 }
