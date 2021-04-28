@@ -1,3 +1,27 @@
+function copyText(element) {
+    let range, selection;
+    element = document.getElementById("mail"); 
+    if (document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElementText(element);
+      range.select();
+    } else if (window.getSelection) {
+      selection = window.getSelection();        
+      range = document.createRange();
+      range.selectNodeContents(element);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    
+    try {
+      document.execCommand('copy');
+      alert('text copied');
+    }
+    catch (err) {
+      alert('unable to copy text');
+    }
+}
+
 document.addEventListener("DOMContentLoaded",function(e) {
     function getMonthName(nb){
         switch(nb){
@@ -19,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         const latitude=47.233721458651196;
         const longitude=6.025049819255769;
         
-        var mymap = L.map('map', { 
+        let mymap = L.map('map', { 
             center: [latitude, longitude], 
             zoom: 16 
         });
@@ -33,18 +57,18 @@ document.addEventListener("DOMContentLoaded",function(e) {
     }
 
     function ajoutDate(){
-        var jourActuel = new Date();
+        let jourActuel = new Date();
 
-        var collecte = new Date();
+        let collecte = new Date();
         if(jourActuel.getDay()==collecte.getDay() && jourActuel.getHours()>17){
             collecte.setDate(collecte.getDate() + (7-collecte.getDay())%7+1);
         }else{
             collecte.setDate(collecte.getDate() + ((7-collecte.getDay())%7+1) % 7);
         }
-        var mois=getMonthName(collecte.getMonth());
+        let mois=getMonthName(collecte.getMonth());
         document.getElementById("collecte").innerHTML+=collecte.getDate()+" "+mois+" de 15h à 17h.";
 
-        var distribution = new Date();
+        let distribution = new Date();
         if(distribution.getHours()>17){
             distribution.setDate(distribution.getDate() + (7-distribution.getDay())%7+4);
         }else{
@@ -55,12 +79,4 @@ document.addEventListener("DOMContentLoaded",function(e) {
 
     ajoutCarte();
     ajoutDate();
-
-    var mail=document.getElementById("mailbox");
-    mail.addEventListener('click', function(){
-        mail.title="adresse copié!";
-        mail.addEventListener('mouseout', function(){
-            mail.title="cliquez pour copier l'adresse";
-        });
-    });
 });
