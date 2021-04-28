@@ -180,7 +180,7 @@ footer a{
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1227px){
     header{
         height: 2.7em;
         transition: all 0.25s ease-in;
@@ -209,6 +209,9 @@ footer a{
     .anchor{
         scroll-margin-top: 1.5em;
     }
+    .alligne iframe{
+        padding: 0px;
+    }    
 }
 @media only screen and (max-width: 650px){
     h1{
@@ -227,4 +230,7 @@ footer a{
     .anchor{
         scroll-margin-top: 1.5em;
     }
+    .alligne iframe+div{
+        padding: 0px 1.1em 0px 1.1em;
+    }    
 }
