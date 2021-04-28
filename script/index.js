@@ -39,44 +39,53 @@ document.addEventListener("DOMContentLoaded",function(e) {
             case 11:return "Décembre";
         }
     }
-    function ajoutCarte(){
-        const latitude=47.233721458651196;
-        const longitude=6.025049819255769;
-        
-        let mymap = L.map('map', { 
-            center: [latitude, longitude], 
-            zoom: 16 
+
+
+
+    const latitude=47.233721458651196;
+    const longitude=6.025049819255769;
+    let mymap = L.map('map', { 
+        center: [latitude, longitude], 
+        zoom: 16 ,
+        scrollWheelZoom: false
+    });
+
+    L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLSH<br>32 Rue Megevand, 25000 Besançon");
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 18
+    }).addTo(mymap);
+
+
+
+    let jourActuel = new Date();
+
+    let collecte = new Date();
+    if(jourActuel.getDay()==collecte.getDay() && jourActuel.getHours()>17){
+        collecte.setDate(collecte.getDate() + (7-collecte.getDay())%7+1);
+    }else{
+        collecte.setDate(collecte.getDate() + ((7-collecte.getDay())%7+1) % 7);
+    }
+    let mois=getMonthName(collecte.getMonth());
+    document.getElementById("collecte").innerHTML+=collecte.getDate()+" "+mois+" de 15h à 17h.";
+
+    let distribution = new Date();
+    if(distribution.getHours()>17){
+        distribution.setDate(distribution.getDate() + (7-distribution.getDay())%7+4);
+    }else{
+        distribution.setDate(distribution.getDate() + ((7-distribution.getDay())%7+4) % 7);
+    }
+    console.log(distribution);
+
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
-
-        L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLSH<br>32 Rue Megevand, 25000 Besançon");
-
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
-            attribution: '© OpenStreetMap contributors',
-            maxZoom: 18
-        }).addTo(mymap);
-    }
-
-    function ajoutDate(){
-        let jourActuel = new Date();
-
-        let collecte = new Date();
-        if(jourActuel.getDay()==collecte.getDay() && jourActuel.getHours()>17){
-            collecte.setDate(collecte.getDate() + (7-collecte.getDay())%7+1);
-        }else{
-            collecte.setDate(collecte.getDate() + ((7-collecte.getDay())%7+1) % 7);
-        }
-        let mois=getMonthName(collecte.getMonth());
-        document.getElementById("collecte").innerHTML+=collecte.getDate()+" "+mois+" de 15h à 17h.";
-
-        let distribution = new Date();
-        if(distribution.getHours()>17){
-            distribution.setDate(distribution.getDate() + (7-distribution.getDay())%7+4);
-        }else{
-            distribution.setDate(distribution.getDate() + ((7-distribution.getDay())%7+4) % 7);
-        }
-        console.log(distribution);
-    }
-
-    ajoutCarte();
-    ajoutDate();
+    });
 });
