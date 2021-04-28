@@ -182,11 +182,11 @@ footer a{
 
 @media only screen and (max-width: 1227px){
     header{
-        height: 2.7em;
+        height: 3.1em;
         transition: all 0.25s ease-in;
     }
     header > a > div{
-        font-size: 1.7em;
+        font-size: 1.95em;
         transition: all 0.25s ease-in;
     }
     .anchor{
