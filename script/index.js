@@ -15,7 +15,7 @@ function copyText(element) {
     
     try {
       document.execCommand('copy');
-      alert('text copied');
+      alert('mail copié');
     }
     catch (err) {
       alert('unable to copy text');
