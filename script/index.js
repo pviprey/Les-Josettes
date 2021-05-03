@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
     let jourActuel = new Date();
 
     let collecte = new Date();
-    if(jourActuel.getDay()==collecte.getDay() && jourActuel.getHours()>17){
+    if(jourActuel.getDay()>=collecte.getDay() && jourActuel.getHours()>=17){
         collecte.setDate(collecte.getDate() + (7-collecte.getDay())%7+1);
     }else{
         collecte.setDate(collecte.getDate() + ((7-collecte.getDay())%7+1) % 7);
