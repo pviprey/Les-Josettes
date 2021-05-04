@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         scrollWheelZoom: false
     });
 
-    L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLSH<br>32 Rue Megevand, 25000 Besançon");
+    L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
