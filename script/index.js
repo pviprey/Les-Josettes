@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
     const longitudeSlhs=6.025049819255769;
     let mymap = L.map('map', { 
         center: [latitudeSlhs, longitudeSlhs], 
-        zoom: 16,
+        zoom: 15,
         scrollWheelZoom: false
     });
 

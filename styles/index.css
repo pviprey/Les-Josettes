@@ -149,7 +149,7 @@ p+p{
     position: relative;
     z-index: 0;
     width: 100%;
-    height: 80vh;
+    height: 78vh;
 }
 #map + p{
     font-size: 2em;
