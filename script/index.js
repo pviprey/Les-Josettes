@@ -43,22 +43,27 @@ document.addEventListener("DOMContentLoaded",function(e) {
     const latitudeBouloie=47.248934334330976;
     const longitudeBouloie=5.987255037247366;
 
-    const latitude=47.233721458651196;
-    const longitude=6.025049819255769;
+    const latitudeSlhs=47.233721458651196;
+    const longitudeSlhs=6.025049819255769;
     let mymap = L.map('map', { 
-        center: [(latitude+latitudeBouloie)/2, (longitude+longitudeBouloie)/2], 
+        center: [latitudeSlhs, longitudeSlhs], 
         zoom: 15,
         scrollWheelZoom: false
     });
 
-    L.marker([latitude, longitude]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
+    L.marker([latitudeSlhs, longitudeSlhs]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
     L.marker([latitudeBouloie, longitudeBouloie]).addTo(mymap).bindPopup("Restaurant RU Lumière<br>36 Avenue de l'Observatoire, 25000 Besançon");
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
     }).addTo(mymap);
 
-
+    document.getElementById('bouloie').addEventListener('click', function(e){
+        mymap.panTo(new L.latLng(latitudeBouloie, longitudeBouloie));
+    });
+    document.getElementById('slhs').addEventListener('click', function(e){
+        mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
+    });
 
     let jourActuel = new Date();
 

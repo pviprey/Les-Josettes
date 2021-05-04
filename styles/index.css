@@ -151,6 +151,17 @@ p+p{
     width: 100%;
     height: 80vh;
 }
+#map + p{
+    font-size: 2em;
+}
+
+#map + p>#bouloie, #map + p>#slhs{
+    cursor: pointer;
+}
+
+#map + p>#bouloie:hover, #map + p>#slhs:hover{
+    text-decoration: underline;
+}
 
 #adresse p{
     margin-bottom: 0;
