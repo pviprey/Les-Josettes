@@ -156,6 +156,7 @@ p+p{
 }
 
 #map + p>#bouloie, #map + p>#slhs{
+    font-style: italic;
     cursor: pointer;
 }
 
