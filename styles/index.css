@@ -250,4 +250,7 @@ footer a{
         margin-left: 5em;
         margin-right: 5em;
     }
+    #map + p{
+        font-size: 1.2em;
+    }
 }
