@@ -172,13 +172,15 @@ p+p{
 #mailbox:hover{
     cursor: pointer;
 }
-#mailbox p{
-    visibility: hidden;
+#mailbox p#mail{
     text-align: center;
     font-size: 1rem;
 }
-#mailbox:hover p{
-    visibility: visible;
+#mailbox p#mail::after{
+    content: 'Cliquez pour copier notre adresse mail';
+}
+#mailbox:hover p#mail::after{
+    content: 'lesjosettes.besancon@gmail.com';
 }
 
 footer{
