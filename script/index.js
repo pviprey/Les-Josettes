@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     }
 
-    const latitudeBouloie=47.248934334330976;
-    const longitudeBouloie=5.987255037247366;
-
     const latitudeSlhs=47.233721458651196;
     const longitudeSlhs=6.025049819255769;
     let mymap = L.map('map', { 
@@ -52,15 +49,11 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
 
     L.marker([latitudeSlhs, longitudeSlhs]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
-    L.marker([latitudeBouloie, longitudeBouloie]).addTo(mymap).bindPopup("Restaurant RU Lumière<br>36 Avenue de l'Observatoire, 25000 Besançon");
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
     }).addTo(mymap);
 
-    document.getElementById('bouloie').addEventListener('click', function(e){
-        mymap.panTo(new L.latLng(latitudeBouloie, longitudeBouloie));
-    });
     document.getElementById('slhs').addEventListener('click', function(e){
         mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
     });
