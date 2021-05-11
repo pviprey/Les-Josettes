@@ -155,12 +155,12 @@ p+p{
     font-size: 2em;
 }
 
-#map + p#centrer>span{
+#map + p#centrer span{
     font-style: italic;
     cursor: pointer;
 }
 
-#map + p#centrer>span:hover{
+#map + p#centrer span:hover{
     text-decoration: underline;
 }
 
