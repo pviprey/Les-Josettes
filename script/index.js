@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     }
 
+    const latitudeKW=47.21727982861555;
+    const longitudeKW=6.019087869830258;
+
     const latitudeSlhs=47.233721458651196;
     const longitudeSlhs=6.025049819255769;
     let mymap = L.map('map', { 
@@ -49,6 +52,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
 
     L.marker([latitudeSlhs, longitudeSlhs]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
+    L.marker([latitudeKW, longitudeKW]).addTo(mymap).bindPopup("Entreprise KellerWilliams<br>40 Avenue de la 7eme armée américaine, 25000 Besançon");
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
@@ -57,6 +61,10 @@ document.addEventListener("DOMContentLoaded",function(e) {
     document.getElementById('slhs').addEventListener('click', function(e){
         mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
     });
+    document.getElementById('kw').addEventListener('click', function(e){
+        mymap.panTo(new L.latLng(latitudeKW, longitudeKW));
+    });
+
 
     let jourActuel = new Date();
 

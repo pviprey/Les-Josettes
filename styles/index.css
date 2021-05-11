@@ -155,12 +155,12 @@ p+p{
     font-size: 2em;
 }
 
-#map + p>#bouloie, #map + p>#slhs{
+#map + p#centrer>span{
     font-style: italic;
     cursor: pointer;
 }
 
-#map + p>#bouloie:hover, #map + p>#slhs:hover{
+#map + p#centrer>span:hover{
     text-decoration: underline;
 }
 
