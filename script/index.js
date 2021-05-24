@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         collecte.setDate(collecte.getDate() + ((7-collecte.getDay())%7+1) % 7);
     }
     let mois=getMonthName(collecte.getMonth());
-    document.getElementById("collecte").innerHTML+=collecte.getDate()+" "+mois+" de 15h à 17h.";
+    document.getElementById("collecte").innerHTML+=" Lundi "+collecte.getDate()+" "+mois+" de 15h à 17h.";
 
     let distribution = new Date();
     if(distribution.getHours()>17){
