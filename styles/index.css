@@ -32,7 +32,7 @@ body{
     /*z-index: 0;*/
     background-color: rgb(47, 47, 47);
 	line-height: 1.4;
-    font-family: 'Orelega One', cursive;
+    font-family: 'Orelega One', 'Times New Roman', Times, serif;
     color: white;
 }
 ol, ul{
