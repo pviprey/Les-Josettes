@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     }
 
+    var yellowPin = L.icon({
+        iconUrl: 'images/yellowPin.png',
+        iconSize:     [70, 70], // size of the icon
+        iconAnchor:   [35, 59], // point of the icon which will correspond to marker's location
+        popupAnchor:  [0, -65] // point from which the popup should open relative to the iconAnchor
+    });
+
     const latitudeSlhs=47.233721458651196;
     const longitudeSlhs=6.025049819255769;
     let mymap = L.map('map', { 
@@ -47,8 +54,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         zoom: 15,
         scrollWheelZoom: false
     });
-
-    L.marker([latitudeSlhs, longitudeSlhs]).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
+    L.marker([latitudeSlhs, longitudeSlhs], {icon: yellowPin}).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
@@ -67,15 +73,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
     }
     let mois=getMonthName(collecte.getMonth());
     document.getElementById("collecte").innerHTML+=" Lundi "+collecte.getDate()+" "+mois+" de 15h à 17h.";
-
-    let distribution = new Date();
-    if(distribution.getHours()>17){
-        distribution.setDate(distribution.getDate() + (7-distribution.getDay())%7+4);
-    }else{
-        distribution.setDate(distribution.getDate() + ((7-distribution.getDay())%7+4) % 7);
-    }
-    console.log(distribution);
-
 
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
