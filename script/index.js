@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
     });
 
-
+/*
     let jourActuel = new Date();
     let collecte = new Date();
     if(jourActuel.getDay()>=collecte.getDay() && jourActuel.getHours()>=17){
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
     }
     let mois=getMonthName(collecte.getMonth());
     document.getElementById("collecte").innerHTML+=" Lundi "+collecte.getDate()+" "+mois+" de 15h à 17h.";
-
+*/
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
