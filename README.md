@@ -1,0 +1,1 @@
+This is website's repo of the association 'Les josettes'. The association brings help to the students in university in the city of Besançon regarding their need in stuffs like: food, clothes, hygienic product
