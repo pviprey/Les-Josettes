@@ -194,7 +194,7 @@ footer a{
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 1226px){
+@media only screen and (max-width: 1440px){
     header{
         height: 3.5em;
         transition: all 0.25s ease-in;
@@ -204,8 +204,11 @@ footer a{
         transition: all 0.25s ease-in;
     }
 }
-@media only screen and (max-width: 1050px){
-    a:nth-child(4n){
+@media only screen and (max-width: 1270px){
+    a:nth-child(4n) > div{
+        border-right: 0px;
+    }
+    a:nth-child(5n){
         text-align: center;
         width: 100%;
     }    
@@ -224,36 +227,19 @@ footer a{
         padding: 0px;
     }    
 }
-@media only screen and (max-width: 780px){
-    h1{
-        font-size: 2.7em;
-        transition: all 0.25s ease-in;
-    }
-    p{
-        font-size: 1.2em;
-        text-align: justify;
-        transition: all 0.25s ease-in;
-    }
-}
-@media only screen and (max-width: 650px){
-    h1{
-        font-size: 2.4em;
-        transition: all 0.25s ease-in;
-    } 
-    p{
-        font-size: 1.2em;
-        text-align: justify;
-        transition: all 0.25s ease-in;
-    }
+@media only screen and (max-width: 800px){
     header{
-        height: 4.5em;
+        transition: all 0.25s ease-in;
+        height: 0em;
     }
     header > a > div{
-        font-size: 1.2em;
-    }    
-    .anchor{
-        scroll-margin-top: 1.2em;
+        font-size: 0em;
     }
+
+    a:nth-child(5n){  
+        width: 0;
+    }
+    
     .alligne iframe+div{
         padding: 0px 1.1em 0px 1.1em;
     }
@@ -261,9 +247,18 @@ footer a{
         margin-top: 1.2em;
         margin-bottom: 1.2em;
         margin-left: 5em;
-        margin-right: 5em;
+        margin-right: 3em;
     }
+    h1{
+        font-size: 2.7em;
+        transition: all 0.25s ease-in;
+    }
+    p{
+        font-size: 1.3em;
+        text-align: justify;
+        transition: all 0.25s ease-in;
+    }    
     #map + p{
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 }
