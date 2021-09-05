@@ -61,6 +61,15 @@ document.addEventListener("DOMContentLoaded",function(e) {
     }).addTo(mymap);
     document.getElementById('slhs').addEventListener('click', function(e){
         mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
+        document.getElementById("slhs").classList.add("est_centre");
+    });
+
+    mymap.addEventListener('mousemove', function(e){
+        if(mymap.getCenter().equals([latitudeSlhs, longitudeSlhs], 0.000000001)){
+            document.getElementById("slhs").classList.add("est_centre");
+        }else{
+            document.getElementById("slhs").classList.remove("est_centre");
+        }
     });
 
 /*

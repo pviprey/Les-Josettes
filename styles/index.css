@@ -92,6 +92,7 @@ a{
     color: white;
 }
 
+
 h1{
     padding-left: 1.1em;
     font-size: 4em;
@@ -131,6 +132,7 @@ h1 .surligne{
     scroll-margin-top: 1em;
 }
 
+
 p{
     font-size: 1.4em;
     font-weight: normal;
@@ -142,6 +144,7 @@ p+p{
     margin-bottom: 1.2em;
 }
 
+
 #map{
     position: relative;
     z-index: 0;
@@ -151,17 +154,17 @@ p+p{
 #map + p{
     font-size: 2em;
 }
-
 #map + p#centrer{
     padding-top: 3px;
 }
-
 #map + p#centrer span{
-    background-color: goldenrod;
     cursor: pointer;
-    border: 2px solid goldenrod;
+    border: 3px solid goldenrod;
     padding: 3px;
     border-radius: 10px;
+}
+#map + p#centrer span.est_centre{
+    background-color: goldenrod;
 }
 
 
@@ -169,6 +172,7 @@ p+p{
     margin-bottom: 0;
     margin-left: 1em;
 }
+
 
 #mailbox:hover{
     cursor: pointer;
@@ -184,6 +188,7 @@ p+p{
     content: 'lesjosettes.besancon@gmail.com';
 }
 
+
 footer{
     height: 60px;
     background-color: black;
@@ -193,6 +198,10 @@ footer{
 footer a{
     text-decoration: underline;
 }
+
+/*
+Responsive part of the website
+*/
 
 @media only screen and (max-width: 1440px){
     header{
