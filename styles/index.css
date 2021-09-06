@@ -162,9 +162,11 @@ p+p{
     border: 3px solid goldenrod;
     padding: 3px;
     border-radius: 10px;
+    transition: background-color 0.25s ease;
 }
 #map + p#centrer span.est_centre{
     background-color: goldenrod;
+    transition: background-color 0.25s ease;
 }
 
 

@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
 
     mymap.addEventListener('mousemove', function(e){
-        if(mymap.getCenter().equals([latitudeSlhs, longitudeSlhs], 0.000000001)){
+        if(mymap.getCenter().equals([latitudeSlhs, longitudeSlhs], 0.001)){
             document.getElementById("slhs").classList.add("est_centre");
         }else{
             document.getElementById("slhs").classList.remove("est_centre");
