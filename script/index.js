@@ -93,4 +93,27 @@ document.addEventListener("DOMContentLoaded",function(e) {
             });
         });
     });
+
+    let header = document.getElementsByTagName("header");
+    header[0].addEventListener('mouseover', function(e){
+        if(e.target.tagName === 'A'){
+            e.target.previousElementSibling?.children[0].classList.add("siblingHovered");
+            
+            e.target.addEventListener('mouseleave', function(event){
+                if(e.target === event.target){
+                    e.target.previousElementSibling?.children[0].classList.remove("siblingHovered");
+                }
+            });
+        }else{
+            if(e.target.tagName === 'DIV'){
+                e.target.parentNode.previousElementSibling?.children[0].classList.add("siblingHovered");
+                
+                e.target.addEventListener('mouseleave', function(event){
+                    if(e.target === event.target){
+                        e.target.parentNode.previousElementSibling?.children[0].classList.remove("siblingHovered");
+                    }
+                });
+            }
+        }
+    });
 });

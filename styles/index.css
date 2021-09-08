@@ -78,6 +78,9 @@ header > a > div{
 header > a:last-child > div{
     border-right: none;
 }
+header > a > div.siblingHovered{
+    border-right: none;
+}
 header > a:hover > div{
     border: none;
 }
@@ -208,11 +211,11 @@ Responsive part of the website
 @media only screen and (max-width: 1440px){
     header{
         height: 3.5em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     header > a > div{
         font-size: 2.2em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
 }
 @media only screen and (max-width: 1270px){
@@ -225,11 +228,11 @@ Responsive part of the website
     }    
     header{
         height: 6em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     header > a > div{
         font-size: 1.7em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }    
     .anchor{
         scroll-margin-top: 1.7em;
@@ -240,7 +243,7 @@ Responsive part of the website
 }
 @media only screen and (max-width: 800px){
     header{
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
         height: 0em;
     }
     header > a > div{
@@ -262,12 +265,12 @@ Responsive part of the website
     }
     h1{
         font-size: 2.7em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     p{
         font-size: 1.3em;
         text-align: justify;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }    
     #map + p{
         font-size: 1.3em;
@@ -276,7 +279,7 @@ Responsive part of the website
 
 @media only screen and (max-device-width: 800px){
     header{
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
         height: 0em;
     }
     header > a > div{
@@ -289,12 +292,12 @@ Responsive part of the website
 
     h1{
         font-size: 3.1em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     p{
         font-size: 1.5em;
         text-align: justify;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }    
     #map + p{
         font-size: 1.5em;
