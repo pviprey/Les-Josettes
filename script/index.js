@@ -106,11 +106,11 @@ document.addEventListener("DOMContentLoaded",function(e) {
             });
         }else{
             if(e.target.tagName === 'DIV'){
-                e.target.parentNode.previousElementSibling?.children[0].classList.add("siblingHovered");
+                e.target.parentElement.previousElementSibling?.children[0].classList.add("siblingHovered");
                 
                 e.target.addEventListener('mouseleave', function(event){
                     if(e.target === event.target){
-                        e.target.parentNode.previousElementSibling?.children[0].classList.remove("siblingHovered");
+                        e.target.parentElement.previousElementSibling?.children[0].classList.remove("siblingHovered");
                     }
                 });
             }
