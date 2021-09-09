@@ -78,6 +78,9 @@ header > a > div{
 header > a:last-child > div{
     border-right: none;
 }
+header > a > div.siblingHovered{
+    border-right: none;
+}
 header > a:hover > div{
     border: none;
 }
@@ -91,6 +94,7 @@ a{
     text-decoration: none;
     color: white;
 }
+
 
 h1{
     padding-left: 1.1em;
@@ -131,6 +135,7 @@ h1 .surligne{
     scroll-margin-top: 1em;
 }
 
+
 p{
     font-size: 1.4em;
     font-weight: normal;
@@ -142,6 +147,7 @@ p+p{
     margin-bottom: 1.2em;
 }
 
+
 #map{
     position: relative;
     z-index: 0;
@@ -151,17 +157,19 @@ p+p{
 #map + p{
     font-size: 2em;
 }
-
 #map + p#centrer{
     padding-top: 3px;
 }
-
 #map + p#centrer span{
-    background-color: goldenrod;
     cursor: pointer;
-    border: 2px solid goldenrod;
+    border: 3px solid goldenrod;
     padding: 3px;
     border-radius: 10px;
+    transition: background-color 0.25s ease;
+}
+#map + p#centrer span.est_centre{
+    background-color: goldenrod;
+    transition: background-color 0.25s ease;
 }
 
 
@@ -169,6 +177,7 @@ p+p{
     margin-bottom: 0;
     margin-left: 1em;
 }
+
 
 #mailbox:hover{
     cursor: pointer;
@@ -184,6 +193,7 @@ p+p{
     content: 'lesjosettes.besancon@gmail.com';
 }
 
+
 footer{
     height: 60px;
     background-color: black;
@@ -194,66 +204,53 @@ footer a{
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 1226px){
+/*
+Responsive part of the website
+*/
+
+@media only screen and (max-width: 1490px){
     header{
         height: 3.5em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     header > a > div{
         font-size: 2.2em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
 }
-@media only screen and (max-width: 1050px){
-    a:nth-child(4n){
+@media only screen and (max-width: 1300px){
+    a:nth-child(4n) > div{
+        border-right: 0px;
+    }
+    a:nth-child(5n){
         text-align: center;
         width: 100%;
     }    
     header{
         height: 6em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }
     header > a > div{
         font-size: 1.7em;
-        transition: all 0.25s ease-in;
+        transition: font-size 0.25s ease-in;
     }    
-    .anchor{
-        scroll-margin-top: 1.7em;
-    }
     .alligne iframe{
         padding: 0px;
     }    
 }
-@media only screen and (max-width: 780px){
-    h1{
-        font-size: 2.7em;
-        transition: all 0.25s ease-in;
-    }
-    p{
-        font-size: 1.2em;
-        text-align: justify;
-        transition: all 0.25s ease-in;
-    }
-}
-@media only screen and (max-width: 650px){
-    h1{
-        font-size: 2.4em;
-        transition: all 0.25s ease-in;
-    } 
-    p{
-        font-size: 1.2em;
-        text-align: justify;
-        transition: all 0.25s ease-in;
-    }
+@media only screen and (max-width: 850px){
     header{
-        height: 4.5em;
+        transition: font-size 0.25s ease-in;
+        height: 0em;
     }
     header > a > div{
-        font-size: 1.2em;
-    }    
-    .anchor{
-        scroll-margin-top: 1.2em;
+        font-size: 0em;
     }
+
+    a:nth-child(5n){  
+        width: 0;
+    }
+    
     .alligne iframe+div{
         padding: 0px 1.1em 0px 1.1em;
     }
@@ -261,9 +258,51 @@ footer a{
         margin-top: 1.2em;
         margin-bottom: 1.2em;
         margin-left: 5em;
-        margin-right: 5em;
+        margin-right: 3em;
     }
+    h1{
+        font-size: 2.7em;
+        transition: font-size 0.25s ease-in;
+    }
+    p{
+        font-size: 1.3em;
+        text-align: justify;
+        transition: font-size 0.25s ease-in;
+    }    
     #map + p{
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
+    .alligne iframe+div{
+        padding: 2em 0px 2em 0px;
+    }
+}
+
+@media only screen and (max-device-width: 850px){
+    header{
+        transition: font-size 0.25s ease-in;
+        height: 0em;
+    }
+    header > a > div{
+        font-size: 0em;
+    }
+
+    a:nth-child(5n){  
+        width: 0;
+    }
+
+    h1{
+        font-size: 3.1em;
+        transition: font-size 0.25s ease-in;
+    }
+    p{
+        font-size: 1.5em;
+        text-align: justify;
+        transition: font-size 0.25s ease-in;
+    }    
+    #map + p{
+        font-size: 1.5em;
+    }
+    .alligne iframe+div{
+        padding: 2em 0px 2em 0px;
+    }    
 }
