@@ -236,7 +236,10 @@ Responsive part of the website
     }    
     .alligne iframe{
         padding: 0px;
-    }    
+    }
+    .anchor{
+        scroll-margin-top: 1.7em;
+    }
 }
 @media only screen and (max-width: 850px){
     header{
@@ -255,8 +258,8 @@ Responsive part of the website
         padding: 0px 1.1em 0px 1.1em;
     }
     .onglet{
-        margin-top: 1.2em;
-        margin-bottom: 1.2em;
+        margin-top: 1.1em;
+        margin-bottom: 1.1em;
         margin-left: 5em;
         margin-right: 3em;
     }
@@ -265,19 +268,19 @@ Responsive part of the website
         transition: font-size 0.25s ease-in;
     }
     p{
-        font-size: 1.3em;
+        font-size: 1.1em;
         text-align: justify;
         transition: font-size 0.25s ease-in;
     }    
     #map + p{
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     .alligne iframe+div{
         padding: 2em 0px 2em 0px;
     }
 }
 
-@media only screen and (max-device-width: 850px){
+@media only screen and (max-device-width: 550px){
     header{
         transition: font-size 0.25s ease-in;
         height: 0em;
