@@ -208,7 +208,7 @@ footer a{
 Responsive part of the website
 */
 
-@media only screen and (max-width: 1440px){
+@media only screen and (max-width: 1490px){
     header{
         height: 3.5em;
         transition: font-size 0.25s ease-in;
@@ -218,7 +218,7 @@ Responsive part of the website
         transition: font-size 0.25s ease-in;
     }
 }
-@media only screen and (max-width: 1270px){
+@media only screen and (max-width: 1300px){
     a:nth-child(4n) > div{
         border-right: 0px;
     }
@@ -234,14 +234,11 @@ Responsive part of the website
         font-size: 1.7em;
         transition: font-size 0.25s ease-in;
     }    
-    .anchor{
-        scroll-margin-top: 1.7em;
-    }
     .alligne iframe{
         padding: 0px;
     }    
 }
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 850px){
     header{
         transition: font-size 0.25s ease-in;
         height: 0em;
@@ -280,7 +277,7 @@ Responsive part of the website
     }
 }
 
-@media only screen and (max-device-width: 800px){
+@media only screen and (max-device-width: 850px){
     header{
         transition: font-size 0.25s ease-in;
         height: 0em;
