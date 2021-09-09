@@ -2,23 +2,23 @@ function copyText(element) {
     let range, selection;
     element = document.getElementById("mail"); 
     if (document.body.createTextRange) {
-      range = document.body.createTextRange();
-      range.moveToElementText(element);
-      range.select();
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
     } else if (window.getSelection) {
-      selection = window.getSelection();        
-      range = document.createRange();
-      range.selectNodeContents(element);
-      selection.removeAllRanges();
-      selection.addRange(range);
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
     }
     
     try {
-      document.execCommand('copy');
-      alert('mail copié');
+        document.execCommand('copy');
+        alert('mail copié');
     }
     catch (err) {
-      alert('unable to copy text');
+        alert('unable to copy text');
     }
 }
 

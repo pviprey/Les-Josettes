@@ -275,6 +275,9 @@ Responsive part of the website
     #map + p{
         font-size: 1.3em;
     }
+    .alligne iframe+div{
+        padding: 2em 0px 2em 0px;
+    }
 }
 
 @media only screen and (max-device-width: 800px){
@@ -302,4 +305,7 @@ Responsive part of the website
     #map + p{
         font-size: 1.5em;
     }
+    .alligne iframe+div{
+        padding: 2em 0px 2em 0px;
+    }    
 }
