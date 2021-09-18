@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,10 +28,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body{
-    /*z-index: 0;*/
+    font-family: 'Orelega One', Helvetica, sans-serif;
     background-color: rgb(47, 47, 47);
 	line-height: 1.4;
-    font-family: 'Orelega One', 'Times New Roman', Times, serif;
     color: white;
 }
 ol, ul{
@@ -69,6 +67,7 @@ header{
 
 header > a{
     color: white;
+    text-decoration: none;
 }
 
 header > a:hover{
@@ -146,6 +145,7 @@ h1 .surligne{
 
 
 p{
+    font-family: 'Roboto', sans-serif;
     font-size: 1.4em;
     font-weight: normal;
 }
@@ -188,19 +188,17 @@ p+p{
 }
 
 
-#mailbox:hover{
-    cursor: pointer;
-}
 #mailbox p#mail{
     text-align: center;
     color: goldenrod;
 }
+/*
 #mailbox p#mail::after{
     content: 'Copier notre adresse mail';
 }
 #mailbox:hover p#mail::after{
     content: 'lesjosettes.besancon@gmail.com';
-}
+}*/
 
 
 footer{
@@ -289,7 +287,7 @@ Responsive part of the website
     }
 }
 
-@media only screen and (max-device-width: 550px){
+@media only screen and (max-device-width: 500px){
     header{
         transition: font-size 0.25s ease-in;
         height: 0em;
