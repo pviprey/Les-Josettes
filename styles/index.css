@@ -67,6 +67,16 @@ header{
     transition: all 0.25s ease-in;
 }
 
+header > a{
+    color: white;
+}
+
+header > a:hover{
+    transition: font-size 0.2s ease-in-out;
+    font-size: 1.35em;
+    background-color: goldenrod;
+}
+
 header > a > div{
     display: inline;
     text-align: center;
@@ -85,14 +95,13 @@ header > a:hover > div{
     border: none;
 }
 
-header > a:hover{
-    transition: font-size 0.2s ease-in-out;
-    font-size: 1.35em;
-    background-color: goldenrod;
-}
-a{
+footer a{
     text-decoration: none;
     color: white;
+}
+
+a{
+    color: goldenrod;
 }
 
 
