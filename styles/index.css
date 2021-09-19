@@ -161,13 +161,13 @@ p+p{
     position: relative;
     z-index: 0;
     width: 100%;
-    height: 77vh;
+    height: 75vh;
 }
 #map + p{
     font-size: 2em;
 }
 #map + p#centrer{
-    padding-top: 3px;
+    padding-top: 0.2em;
 }
 #map + p#centrer span{
     cursor: pointer;
