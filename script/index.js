@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.getElementsByTagName("header")[0].querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
     
