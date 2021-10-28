@@ -188,17 +188,10 @@ p+p{
 }
 
 
-#mailbox p#mail{
+#mailbox p{
     text-align: center;
     color: goldenrod;
 }
-/*
-#mailbox p#mail::after{
-    content: 'Copier notre adresse mail';
-}
-#mailbox:hover p#mail::after{
-    content: 'lesjosettes.besancon@gmail.com';
-}*/
 
 
 footer{
