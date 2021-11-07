@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     });
 
-    document.getElementsByTagName("header")[0].querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    let header = document.getElementsByTagName("header");
+    header[0].querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
     
@@ -41,7 +43,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
         });
     });
 
-    let header = document.getElementsByTagName("header");
     header[0].addEventListener('mouseover', function(e){
         if(e.target.tagName === 'A'){
             e.target.previousElementSibling?.children[0].classList.add("siblingHovered");
@@ -63,4 +64,12 @@ document.addEventListener("DOMContentLoaded",function(e) {
             }
         }
     });
+
+    // let body = document.getElementsByTagName("body");
+    // let footer = document.createElement("footer");
+    // footer.classList.add("alligne");
+    // let p = document.createElement("p");
+    // p.innerHTML = "Site carte de visite | Réalisé par <a href=\"https://github.com/pviprey\">Pierre Viprey</a>"
+    // footer.appendChild(p);
+    // body.insertAdjacentElement('afterend', footer);
 });
