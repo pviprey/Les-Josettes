@@ -128,14 +128,14 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
     
     for(let i=0; i<collecte.length; i++){
-        if (new Date(collecte[i].getTime()).setHours(date.getHours()+2) > Date.now()){
+        if (new Date(collecte[i].getTime()).setHours(collecte[i].getHours()+2) > Date.now()){
             document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i]) + " " + collecte[i].getDate() + " " + getLiteralMonth(collecte[i]) + " de " + collecte[i].getHours() + "h à 17h.";
             break;
         }
     }
 
     for(let i=0; i< distribution.length; i++){
-        if(new Date(collecte[i].getTime()).setHours(date.getHours()+3) > Date.now()){
+        if(new Date(distribution[i].getTime()).setHours(distribution[i].getHours()+3) > Date.now()){
             document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i]) + " " + distribution[i].getDate() + " " + getLiteralMonth(distribution[i]) + " de " + distribution[i].getHours() + "h à 17h.";
             break;
         }
