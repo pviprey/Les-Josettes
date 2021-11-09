@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded",function(e) {
-
-    function collecte(y, m, d){
+    function col(y, m, d){
         return new Date(y, m, d, 15);
     }
     
-    function distribution(y, m, d){
+    function dist(y, m, d){
         return new Date(y, m, d, 14);
     }
     
@@ -56,11 +55,12 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     }
 
-    const year = new Date.now().getFullYear();
-    let collecte=[collecte(year, 10, 15), collecte(year, 10, 22), collecte(year, 10, 29)];
-    let distribution=[distribution(year, 10, 18), distribution(year, 11, 2)];
+    const year = new Date().getFullYear();
+    let collecte=[col(year, 10, 15), col(year, 10, 22), col(year, 10, 29)];
+    let distribution=[dist(year, 10, 18), dist(year, 11, 2)];
 
-
+    console.log(collecte);
+    console.log(distribution);
     
     var yellowPin = L.icon({
         iconUrl: 'images/yellowPin.png',
@@ -118,7 +118,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }else{
             if(e.target.tagName === 'DIV'){
                 e.target.parentElement.previousElementSibling?.children[0].classList.add("siblingHovered");
-                getElementById("collecte").innerHTML
                 e.target.addEventListener('mouseleave', function(event){
                     if(e.target === event.target){
                         e.target.parentElement.previousElementSibling?.children[0].classList.remove("siblingHovered");
@@ -129,17 +128,15 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
     
     for(let i=0; i<collecte.length; i++){
-        let date = collecte[i];
-        if (date.setHours(date.getHours()+2) > new Date.now()){
-            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i]) + " " + collecte[i].getDate() + " " + getLiteralMonth(collecte[i]) + " de " + collecte[i].getHours() + "à 17h.";
+        if (new Date(collecte[i].getTime()).setHours(date.getHours()+2) > Date.now()){
+            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i]) + " " + collecte[i].getDate() + " " + getLiteralMonth(collecte[i]) + " de " + collecte[i].getHours() + "h à 17h.";
             break;
         }
     }
 
     for(let i=0; i< distribution.length; i++){
-        let date = distribution[i];
-        if(date.setHours(date.getHours()+3) > new Date.now()){
-            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i]) + " " + distribution[i].getDate() + " " + getLiteralMonth(distribution[i]) + " de " + distribution[i].getHours() + "à 17h.";
+        if(new Date(collecte[i].getTime()).setHours(date.getHours()+3) > Date.now()){
+            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i]) + " " + distribution[i].getDate() + " " + getLiteralMonth(distribution[i]) + " de " + distribution[i].getHours() + "h à 17h.";
             break;
         }
     }
