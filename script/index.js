@@ -1,4 +1,67 @@
 document.addEventListener("DOMContentLoaded",function(e) {
+    function col(y, m, d){
+        return new Date(y, m, d, 15);
+    }
+    
+    function dist(y, m, d){
+        return new Date(y, m, d, 14);
+    }
+    
+    function getLiteralDay(date){
+        switch(date.getDay()){
+            case 0:
+                return "Lundi";
+            case 1:
+                return "Mardi";
+            case 2:
+                return "Mercredi";
+            case 3:
+                return "Jeudi";
+            case 4:
+                return "Vendredi";
+            case 5:
+                return "Samedi";
+            case 6:
+                return "Dimanche";
+        }
+    }
+    
+    function getLiteralMonth(date){
+        switch(date.getMonth()){
+            case 0:
+                return "Janvier";
+            case 1:
+                return "Février";
+            case 2:
+                return "Mars";
+            case 3:
+                return "Avril";
+            case 4:
+                return "Mai";
+            case 5:
+                return "Juin";
+            case 6:
+                return "Juillet";
+            case 7:
+                return "Aout";
+            case 8:
+                return "Septembre";
+            case 9:
+                return "Octobre";
+            case 10:
+                return "Novembre";
+            case 11:
+                return "Decembre";          
+        }
+    }
+
+    const year = new Date().getFullYear();
+    let collecte=[col(year, 10, 15), col(year, 10, 22), col(year, 10, 29)];
+    let distribution=[dist(year, 10, 18), dist(year, 11, 2)];
+
+    console.log(collecte);
+    console.log(distribution);
+    
     var yellowPin = L.icon({
         iconUrl: 'images/yellowPin.png',
         iconSize:     [70, 70], // size of the icon
@@ -55,7 +118,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }else{
             if(e.target.tagName === 'DIV'){
                 e.target.parentElement.previousElementSibling?.children[0].classList.add("siblingHovered");
-                
                 e.target.addEventListener('mouseleave', function(event){
                     if(e.target === event.target){
                         e.target.parentElement.previousElementSibling?.children[0].classList.remove("siblingHovered");
@@ -64,12 +126,18 @@ document.addEventListener("DOMContentLoaded",function(e) {
             }
         }
     });
+    
+    for(let i=0; i<collecte.length; i++){
+        if (new Date(collecte[i].getTime()).setHours(date.getHours()+2) > Date.now()){
+            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i]) + " " + collecte[i].getDate() + " " + getLiteralMonth(collecte[i]) + " de " + collecte[i].getHours() + "h à 17h.";
+            break;
+        }
+    }
 
-    // let body = document.getElementsByTagName("body");
-    // let footer = document.createElement("footer");
-    // footer.classList.add("alligne");
-    // let p = document.createElement("p");
-    // p.innerHTML = "Site carte de visite | Réalisé par <a href=\"https://github.com/pviprey\">Pierre Viprey</a>"
-    // footer.appendChild(p);
-    // body.insertAdjacentElement('afterend', footer);
+    for(let i=0; i< distribution.length; i++){
+        if(new Date(collecte[i].getTime()).setHours(date.getHours()+3) > Date.now()){
+            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i]) + " " + distribution[i].getDate() + " " + getLiteralMonth(distribution[i]) + " de " + distribution[i].getHours() + "h à 17h.";
+            break;
+        }
+    }
 });
