@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded",function(e) {
     
     function getLiteralDay(date){
         switch(date.getDay()){
-            case 0:
-                return "Lundi";
             case 1:
-                return "Mardi";
+                return "Lundi";
             case 2:
-                return "Mercredi";
+                return "Mardi";
             case 3:
-                return "Jeudi";
+                return "Mercredi";
             case 4:
-                return "Vendredi";
+                return "Jeudi";
             case 5:
-                return "Samedi";
+                return "Vendredi";
             case 6:
+                return "Samedi";
+            case 7:
                 return "Dimanche";
         }
     }
