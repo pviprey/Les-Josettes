@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(e) {
-    function col(y, m, d){
-        return new Date(y, m, d, 15);
-    }
-    
-    function dist(y, m, d){
-        return new Date(y, m, d, 14);
+    function date(y, m, d, h){
+        return new Date(y, m, d, h);
     }
     
     function getLiteralDay(date){
@@ -56,8 +52,14 @@ document.addEventListener("DOMContentLoaded",function(e) {
     }
 
     const year = new Date().getFullYear();
-    let collecte=[col(year, 10, 15), col(year, 10, 22), col(year, 10, 29)];
-    let distribution=[dist(year, 10, 18), dist(year, 11, 2)];
+    let collecte=[
+        {begin: date(year, 10, 15, 15), end: date(year, 10, 15, 17)},
+        {begin: date(year, 10, 22, 15), end: date(year, 10, 22, 17)},
+        {begin: date(year, 10, 29, 15), end: date(year, 10, 29, 17)}];
+
+    let distribution=[
+        {begin: date(year, 10, 18, 14), end: date(year, 10, 18, 17)},
+        {begin: date(year, 11, 02, 14), end: date(year, 11, 02, 17)}];
 
     console.log(collecte);
     console.log(distribution);
@@ -128,15 +130,15 @@ document.addEventListener("DOMContentLoaded",function(e) {
     });
     
     for(let i=0; i<collecte.length; i++){
-        if (new Date(collecte[i].getTime()).setHours(collecte[i].getHours()+2) > Date.now()){
-            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i]) + " " + collecte[i].getDate() + " " + getLiteralMonth(collecte[i]) + " de " + collecte[i].getHours() + "h à 17h.";
+        if (new Date(collecte[i].end.getTime()) > Date.now()){
+            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i].begin) + " " + collecte[i].begin.getDate() + " " + getLiteralMonth(collecte[i].begin) + " de " + collecte[i].begin.getHours() + "h à " + collecte[i].end.getHours() + "h.";
             break;
         }
     }
 
     for(let i=0; i< distribution.length; i++){
-        if(new Date(distribution[i].getTime()).setHours(distribution[i].getHours()+3) > Date.now()){
-            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i]) + " " + distribution[i].getDate() + " " + getLiteralMonth(distribution[i]) + " de " + distribution[i].getHours() + "h à 17h.";
+        if(new Date(distribution[i].end.getTime()) > Date.now()){
+            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i].begin) + " " + distribution[i].begin.getDate() + " " + getLiteralMonth(distribution[i].begin) + " de " + distribution[i].begin.getHours() + "h à " + distribution[i].end.getHours() + "h.";
             break;
         }
     }
