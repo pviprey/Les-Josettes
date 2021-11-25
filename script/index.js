@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded",function(e) {
     let collecte=[
         {begin: date(year, 10, 15, 15), end: date(year, 10, 15, 17)},
         {begin: date(year, 10, 22, 15), end: date(year, 10, 22, 17)},
-        {begin: date(year, 10, 29, 15), end: date(year, 10, 29, 17)}];
+        {begin: date(year, 10, 29, 15), end: date(year, 10, 29, 17)},
+        {begin: date(year, 11, 06, 15), end: date(year, 11, 06, 17)}];
 
     let distribution=[
         {begin: date(year, 10, 18, 14), end: date(year, 10, 18, 17)},
