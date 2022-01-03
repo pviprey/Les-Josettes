@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded",function(e) {
-    function date(y, m, d, h){
-        return new Date(y, m, d, h);
+    /* Affichage des dates de collectes et distributions */
+    function date(year, month, day, hour){
+        return new Date(year, month, day, hour);
     }
     
     function getLiteralDay(date){
@@ -58,20 +59,35 @@ document.addEventListener("DOMContentLoaded",function(e) {
         {begin: date(2021, 10, 29, 15), end: date(2021, 10, 29, 17)},
         {begin: date(2021, 11, 06, 15), end: date(2021, 11, 06, 17)},
         {begin: date(2021, 11, 13, 15), end: date(2021, 11, 13, 17)},
-        
+
         {begin: date(year, 0, 3, 15), end: date(year, 0, 3, 17)},
         {begin: date(year, 0, 10, 15), end: date(year, 0, 10, 17)},
         {begin: date(year, 0, 17, 15), end: date(year, 0, 17, 17)},
-        {begin: date(year, 0, 23, 15), end: date(year, 0, 23, 17)}];
+        {begin: date(year, 0, 23, 15), end: date(year, 0, 23, 17)}
+    ];
 
     let distribution=[
         {begin: date(2021, 10, 18, 14), end: date(2021, 10, 18, 17)},
         {begin: date(2021, 11, 02, 14), end: date(2021, 11, 02, 17)},
-        {begin: date(2021, 11, 16, 14), end: date(2021, 11, 16, 17)}];
+        {begin: date(2021, 11, 16, 14), end: date(2021, 11, 16, 17)}
+    ];
 
-    console.log(collecte);
-    console.log(distribution);
+    for(let i=0; i<collecte.length; i++){
+        if (new Date(collecte[i].end.getTime()) > Date.now()){
+            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i].begin) + " " + collecte[i].begin.getDate() + " " + getLiteralMonth(collecte[i].begin) + " de " + collecte[i].begin.getHours() + "h à " + collecte[i].end.getHours() + "h.";
+            break;
+        }
+    }
+
+    for(let i=0; i< distribution.length; i++){
+        if(new Date(distribution[i].end.getTime()) > Date.now()){
+            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i].begin) + " " + distribution[i].begin.getDate() + " " + getLiteralMonth(distribution[i].begin) + " de " + distribution[i].begin.getHours() + "h à " + distribution[i].end.getHours() + "h.";
+            break;
+        }
+    }    
     
+    /* Affichage de la carte */
+
     var yellowPin = L.icon({
         iconUrl: 'images/yellowPin.png',
         iconSize:     [70, 70], // size of the icon
@@ -86,11 +102,13 @@ document.addEventListener("DOMContentLoaded",function(e) {
         zoom: 15,
         scrollWheelZoom: false
     });
+    
     L.marker([latitudeSlhs, longitudeSlhs], {icon: yellowPin}).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
     }).addTo(mymap);
+
     document.getElementById('slhs').addEventListener('click', function(e){
         mymap.panTo(new L.latLng(latitudeSlhs, longitudeSlhs));
         document.getElementById("slhs").classList.add("est_centre");
@@ -104,6 +122,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         }
     });
 
+    /* Affichage du header */
 
     let header = document.getElementsByTagName("header");
     header[0].querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -136,20 +155,4 @@ document.addEventListener("DOMContentLoaded",function(e) {
             }
         }
     });
-    
-    for(let i=0; i<collecte.length; i++){
-        if (new Date(collecte[i].end.getTime()) > Date.now()){
-            document.getElementById("collecte").innerText += " " + getLiteralDay(collecte[i].begin) + " " + collecte[i].begin.getDate() + " " + getLiteralMonth(collecte[i].begin) + " de " + collecte[i].begin.getHours() + "h à " + collecte[i].end.getHours() + "h.";
-            break;
-        }
-    }
-
-    for(let i=0; i< distribution.length; i++){
-        if(new Date(distribution[i].end.getTime()) > Date.now()){
-            document.getElementById("distribution").innerText += " " + getLiteralDay(distribution[i].begin) + " " + distribution[i].begin.getDate() + " " + getLiteralMonth(distribution[i].begin) + " de " + distribution[i].begin.getHours() + "h à " + distribution[i].end.getHours() + "h.";
-            break;
-        }
-    }
-
-    // test
 });
