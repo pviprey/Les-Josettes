@@ -69,7 +69,12 @@ document.addEventListener("DOMContentLoaded",function(e) {
     let distribution=[
         {begin: date(2021, 10, 18, 14), end: date(2021, 10, 18, 17)},
         {begin: date(2021, 11, 02, 14), end: date(2021, 11, 02, 17)},
-        {begin: date(2021, 11, 16, 14), end: date(2021, 11, 16, 17)}
+        {begin: date(2021, 11, 16, 14), end: date(2021, 11, 16, 17)},
+
+        {begin: date(year, 0, 06, 14), end: date(year, 0, 06, 17)},
+        {begin: date(year, 0, 20, 14), end: date(year, 0, 20, 17)},
+        {begin: date(year, 1, 03, 14), end: date(year, 1, 03, 17)},
+
     ];
 
     for(let i=0; i<collecte.length; i++){
@@ -102,7 +107,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         zoom: 15,
         scrollWheelZoom: false
     });
-    
+
     L.marker([latitudeSlhs, longitudeSlhs], {icon: yellowPin}).addTo(mymap).bindPopup("Université SLHS<br>32 Rue Megevand, 25000 Besançon");
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
         attribution: '© OpenStreetMap contributors',
