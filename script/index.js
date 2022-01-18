@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         {begin: date(year, 0, 3, 15), end: date(year, 0, 3, 17)},
         {begin: date(year, 0, 10, 15), end: date(year, 0, 10, 17)},
         {begin: date(year, 0, 17, 15), end: date(year, 0, 17, 17)},
-        {begin: date(year, 0, 23, 15), end: date(year, 0, 23, 17)}
+        {begin: date(year, 0, 24, 15), end: date(year, 0, 24, 17)}
     ];
 
     let distribution=[
