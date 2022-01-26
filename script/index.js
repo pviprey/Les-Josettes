@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded",function(e) {
         {begin: date(2021, 11, 06, 15), end: date(2021, 11, 06, 17)},
         {begin: date(2021, 11, 13, 15), end: date(2021, 11, 13, 17)},
 
-        {begin: date(year, 0, 3, 15), end: date(year, 0, 3, 17)},
-        {begin: date(year, 0, 10, 15), end: date(year, 0, 10, 17)},
-        {begin: date(year, 0, 17, 15), end: date(year, 0, 17, 17)},
-        {begin: date(year, 0, 24, 15), end: date(year, 0, 24, 17)}
+        {begin: date(year, 0, 31, 15), end: date(year, 0, 31, 17)},
+        {begin: date(year, 1, 7, 15), end: date(year, 1, 7, 17)},
+        {begin: date(year, 1, 14, 15), end: date(year, 1, 14, 17)},
+        {begin: date(year, 1, 21, 15), end: date(year, 1, 21, 17)}
     ];
 
     let distribution=[
