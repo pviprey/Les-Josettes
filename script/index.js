@@ -54,12 +54,6 @@ document.addEventListener("DOMContentLoaded",function(e) {
 
     const year = new Date().getFullYear();
     let collecte=[
-        {begin: date(2021, 10, 15, 15), end: date(2021, 10, 15, 17)},
-        {begin: date(2021, 10, 22, 15), end: date(2021, 10, 22, 17)},
-        {begin: date(2021, 10, 29, 15), end: date(2021, 10, 29, 17)},
-        {begin: date(2021, 11, 06, 15), end: date(2021, 11, 06, 17)},
-        {begin: date(2021, 11, 13, 15), end: date(2021, 11, 13, 17)},
-
         {begin: date(year, 0, 31, 15), end: date(year, 0, 31, 17)},
         {begin: date(year, 1, 7, 15), end: date(year, 1, 7, 17)},
         {begin: date(year, 1, 14, 15), end: date(year, 1, 14, 17)},
@@ -67,13 +61,10 @@ document.addEventListener("DOMContentLoaded",function(e) {
     ];
 
     let distribution=[
-        {begin: date(2021, 10, 18, 14), end: date(2021, 10, 18, 17)},
-        {begin: date(2021, 11, 02, 14), end: date(2021, 11, 02, 17)},
-        {begin: date(2021, 11, 16, 14), end: date(2021, 11, 16, 17)},
-
         {begin: date(year, 0, 06, 14), end: date(year, 0, 06, 17)},
         {begin: date(year, 0, 20, 14), end: date(year, 0, 20, 17)},
         {begin: date(year, 1, 03, 14), end: date(year, 1, 03, 17)},
+        {begin: date(year, 1, 17, 14), end: date(year, 1, 17, 17)},
 
     ];
 
