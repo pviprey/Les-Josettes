@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded",function(e) {
         {begin: date(year, 2, 03, 14), end: date(year, 2, 03, 17)},
         {begin: date(year, 2, 17, 14), end: date(year, 2, 17, 17)},
         {begin: date(year, 2, 17, 14), end: date(year, 2, 17, 17)},
+        {begin: date(year, 2, 31, 14), end: date(year, 2, 31, 17)},
     ];
 
     for(let i=0; i<collecte.length; i++){
