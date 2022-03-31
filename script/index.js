@@ -54,11 +54,11 @@ document.addEventListener("DOMContentLoaded",function(e) {
 
     const year = new Date().getFullYear();
     let collecte=[
-        {begin: date(year, 1, 28, 15), end: date(year, 1, 28, 17)},
-        {begin: date(year, 2, 7, 15), end: date(year, 2, 7, 17)},
-        {begin: date(year, 2, 14, 15), end: date(year, 2, 14, 17)},
-        {begin: date(year, 2, 21, 15), end: date(year, 2, 21, 17)},
-        {begin: date(year, 2, 28, 15), end: date(year, 2, 28, 17)},
+        {begin: date(year, 3, 4, 15), end: date(year, 3, 4, 17)},
+        {begin: date(year, 3, 11, 15), end: date(year, 3, 11, 17)},
+        {begin: date(year, 3, 18, 15), end: date(year, 3, 18, 17)},
+        {begin: date(year, 3, 25, 15), end: date(year, 3, 25, 17)},
+        {begin: date(year, 4, 2, 15), end: date(year, 4, 2, 17)},
     ];
 
     let distribution=[
