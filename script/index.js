@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded",function(e) {
     let collecte=[
         {begin: date(year, 3, 4, 15), end: date(year, 3, 4, 17)},
         {begin: date(year, 3, 11, 15), end: date(year, 3, 11, 17)},
-        {begin: date(year, 3, 18, 15), end: date(year, 3, 18, 17)},
-        {begin: date(year, 3, 25, 15), end: date(year, 3, 25, 17)},
+        //{begin: date(year, 3, 18, 15), end: date(year, 3, 18, 17)},
+        //{begin: date(year, 3, 25, 15), end: date(year, 3, 25, 17)},
         {begin: date(year, 4, 2, 15), end: date(year, 4, 2, 17)},
     ];
 
     let distribution=[
         {begin: date(year, 3, 14, 14), end: date(year, 3, 14, 17)},
-        {begin: date(year, 3, 28, 14), end: date(year, 3, 28, 17)},
+        //{begin: date(year, 3, 28, 14), end: date(year, 3, 28, 17)},
     ];
 
     for(let i=0; i<collecte.length; i++){
