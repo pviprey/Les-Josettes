@@ -2,18 +2,38 @@
 <html lang="fr">
     <head>
         <link rel="manifest" href="manifest.json">
-    <!-- Style et scripts de Leaflet / OpenStreetMap -->
+        
+        <!-- Style et scripts de Leaflet / OpenStreetMap -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
             integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" 
             crossorigin="" defer>
         </script>
+    
+        <!-- https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/ -->
+        <meta name="theme-color" content="#000000">
+        <meta property="og:image" content="icons/icon-512.png">
+        
+        <!-- https://developer.mozilla.org/fr/docs/Mozilla/Mobile/Balise_meta_viewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimal-ui,shrink-to-fit=no" />    
+        
+        <!-- iOS: 
+            https://medium.com/appscope/designing-native-like-progressive-web-apps-for-ios-1b3cdda1d0e8 https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+        -->
+        <meta name="apple-mobile-web-app-capable" content="yes">    
+        <link rel="apple-touch-icon" href="images/les-josettes-icon-192.png">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+        <!-- application styles -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@500&display=swap');
         </style>
         <link href="styles/index.css" rel="stylesheet">
+
+        <!-- application scripts -->
         <script src="script/index.js"></script>
+
         <meta charset="utf-8">
         <meta name="description" content="Website of the french association Les Josettes based in Besançon. Site web de l'association bisontine Les Josettes.">
         <meta name="keywords" content="Les Josettes, Josettes, association, aide, étudiant, etudiant, Besançon, Bezac, Besancon, Bisontines, Bisontine">
