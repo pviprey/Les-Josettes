@@ -2,17 +2,17 @@
     "short_name": "Les Josettes",
     "icons": [
       {
-        "src": "images/lesjosettes-icon-1000.png",
+        "src": "images/les-josettes-icon-1000.png",
         "type": "image/png",
         "sizes": "1000x1000"
       },
       {
-        "src": "images/lesjosettes-icon-192.png",
+        "src": "images/les-josettes-icon-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "images/lesjosettes-icon-512.png",
+        "src": "images/les-josettes-icon-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
